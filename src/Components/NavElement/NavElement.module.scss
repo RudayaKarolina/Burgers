@@ -1,0 +1,16 @@
+@import "../../style/template.scss";
+.oneItemNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  .imgSize {
+    width: 24px;
+    height: 24px;
+  }
+  p {
+    font-family: Nunito;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
