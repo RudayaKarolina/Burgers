@@ -3,6 +3,10 @@
   width: 300px;
   margin: 72px 30px 0 75px;
   padding: 16px;
+  .basketCounter{
+    display: flex;
+    justify-content: space-between;
+  }
   h2 {
     font-family: Nunito;
     font-size: 24px;

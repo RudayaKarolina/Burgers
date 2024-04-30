@@ -8,7 +8,7 @@ export default function BurgerCard({title, img, price, gramm}) {
      <p className={style.burgerPrice}>{price}</p>
      <p className={style.burgerTitle}>{title}</p>
      <p className={style.burgerGramm}>{gramm}</p>
-     <Buttons content="Добавить" colorBack = "rgb(242, 242, 243);" colorText="black"/>
+     <Buttons content="Добавить" colorBack = "#F2F2F3" colorText="black"/>
     </div>
   )
 }
