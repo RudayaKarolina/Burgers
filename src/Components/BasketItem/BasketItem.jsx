@@ -1,10 +1,6 @@
-import { useState } from "react";
 import style from "./BasketItem.module.scss";
 
 export default function BasketItem({ img, title, gramm, price, count, id, changeBasketCount }) {
-
-const [isDisabled, setDisabled] = useState(false)
-
   return (
     <>
       <div className={style.wrapperBasketItem}>
@@ -17,7 +13,7 @@ const [isDisabled, setDisabled] = useState(false)
           </div>
         </div>
         <div className={style.counter}>
-          <button className={style.pointer} onClick={()=>changeBasketCount(id, -1)} disabled={isDisabled} >
+          <button className={style.pointer} onClick={()=>changeBasketCount(id, -1)}>
             -
           </button>
           <p>{count}</p>

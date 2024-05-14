@@ -1,16 +1,14 @@
 @import '../../style/template.scss';
 .wrapperMain {
   margin-bottom: 156px;
-  h2 {
-    font-family: Nunito;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 120%;
-    margin-bottom: 24px;
-  }
   .burgerCars{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    img{
+      width: 276px;
+      height: 220px;
+      border-radius: 12px
+    }
   }
 }
