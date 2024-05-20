@@ -1,11 +1,10 @@
 import BurgerCard from "../BurgerCard/BurgerCard";
 import style from "./Main.module.scss";
 import { v4 as uuidv4 } from "uuid";
-import MainHeading from "../MainHeading/MainHeading";
 
 export default function Main({ headingobj, modalObj }) {
   const {setModal,  setModalImage, setModalTitle, setModalPrice, setModalInfo} = modalObj;
-  const { menu } = headingobj;
+  const { menu, heading } = headingobj;
 
   function openModal(img, title, price, info) {
     setModal(true);
@@ -17,7 +16,7 @@ export default function Main({ headingobj, modalObj }) {
 
   return (
     <div className={style.wrapperMain}>
-      <MainHeading headingobj={headingobj} />
+      <h2 className={style.heading}>{heading}</h2>
       <div className={style.burgerCars}>
         {menu.map((item) => (
           <BurgerCard

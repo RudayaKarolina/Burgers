@@ -3,8 +3,7 @@
         "title": "Бургеры",
         "img": null,
         "id": "87iji", 
-        "checked":true,
-        "arr": "newArrBurgers"
+        "checked":true
     },
     {
         "title": "Закуски",

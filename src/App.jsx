@@ -8,16 +8,45 @@ import style from "./style/App.module.scss";
 import { useState } from "react";
 import basket from "./Components/data/basket.json";
 import addBasketItem from "./Components/Common/addBasketItem";
-import { addBurgerImage } from "./Components/Common/addImageFunc";
+import addImage from "./Components/Common/addImageFunc";
+
 import burgers from "./Components/data/burgers.json";
+import hotdogs from "./Components/data/hot-dogs.json";
+import zakuski from "./Components/data/zakuski.json";
+import kombo from "./Components/data/kombo.json";
+import shaurma from "./Components/data/shaurma.json";
+import pizza from "./Components/data/pizza.json";
+import sauce from "./Components/data/sauce.json";
+import dessert from "./Components/data/desserts.json";
+import vok from "./Components/data/wok.json";
+
+const arrMenu = [
+  { title: "burgers", data: burgers },
+  { title: "zakuski", data: zakuski },
+  { title: "hotdogs", data: hotdogs },
+  { title: "kombo", data: kombo },
+  { title: "shaurma", data: shaurma },
+  { title: "pizza", data: pizza },
+  { title: "vok", data: vok },
+  { title: "dessert", data: dessert },
+  { title: "sauce", data: sauce },
+];
 
 export default function App() {
-  const newArrBurgers = addBurgerImage(burgers);
+  const [activeNavLink, setActiveNavLink] = useState(0);
+  const [menu, setMenu] = useState(addImage(arrMenu[activeNavLink]));
+  const [heading, setHeading] = useState("Бургеры");
+
+  function editNavLink(index, title) {
+    setActiveNavLink(index);
+    setMenu(addImage(arrMenu[index]));
+    setHeading(title);
+  }
+
   const [basketArr, setBasketArr] = useState(addBasketItem(basket));
   const basketState = { basketArr, setBasketArr };
-  const [heading, setHeading] = useState("Бургеры");
-  const [menu, setMenu] = useState(newArrBurgers);
   const headingobj = { heading, setHeading, menu, setMenu };
+
   const [modal, setModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [modalTitle, setModalTitle] = useState("null");
@@ -38,10 +67,10 @@ export default function App() {
 
   return (
     <>
+      {modal && <ModalWindow modalObj={modalObj} />}
       <Header />
-      <Nav headingobj={headingobj} />
+      <Nav headingobj={headingobj} editNavLink={editNavLink} />
       <div className={style.wrapperMain}>
-        <ModalWindow modalObj={modalObj} />
         <Aside basketState={basketState} />
         <Main headingobj={headingobj} modalObj={modalObj} />
       </div>

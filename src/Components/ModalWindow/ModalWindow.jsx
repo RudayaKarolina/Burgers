@@ -1,44 +1,66 @@
-import { createPortal } from "react-dom";
 import Buttons from "../Buttons/Buttons";
 import style from "./ModalWindow.module.scss";
 import closeImg from "../../assets/close.png";
+import { useState } from "react";
+import { getModalPrice } from "../Common/getCalculation";
 
 export default function ModalWindow({ modalObj }) {
-  const { modal, setModal, modalImage, modalTitle, modalPrice, modalInfo} = modalObj;
+  const { setModal, modalImage, modalTitle, modalPrice, modalInfo } = modalObj;
 
   function closeModal() {
     setModal(false);
   }
-  
-  return createPortal(
-    <dialog className={style.modalWindow} open={modal}>
-      <div className={style.orderName}>
-        <h3>{modalTitle}</h3>
-        <img src={closeImg} alt="closeImg" onClick={closeModal} />
-      </div>
-      <div className={style.aboutProduct}>
-        <img src={modalImage} alt="img1" />
-        <div>
-          <p className={style.description}>
-            {modalInfo}
-          </p>
-          <p className={style.sostav}>Состав:</p>
-          <p>Lorem ipsum dolor sit amet.
-          </p>
+
+  const [modalCounter, setModalCounter] = useState(1);
+
+  function editModalCounter(symbol) {
+    if (modalCounter == 1 && symbol == -1) return;
+    setModalCounter(modalCounter + +symbol);
+  }
+
+  return (
+    <div className={style.wrapperModal}>
+      <div className={style.modalWindow}>
+        <div className={style.orderName}>
+          <h3>{modalTitle}</h3>
+          <img src={closeImg} alt="closeImg" onClick={closeModal} />
         </div>
-      </div>
-      <div className={style.addToOrder}>
-        <div className={style.addToOrder}>
-          <Buttons content="Добавить" colorBack="#FF7020" colorText="#FFFFFF" />
-          <div className={style.counter}>
-            <button className={style.pointer}>-</button>
-            <p>1</p>
-            <button className={style.pointer}>+</button>
+        <div className={style.aboutProduct}>
+          <img src={modalImage} alt="img1" />
+          <div>
+            <p className={style.description}>{modalInfo}</p>
+            <p className={style.sostav}>Состав:</p>
+            <p>Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
-        <p className={style.price}>{modalPrice}</p>
+        <div className={style.addToOrder}>
+          <div className={style.addToOrder}>
+            <Buttons
+              content="Добавить"
+              colorBack="#FF7020"
+              colorText="#FFFFFF"
+            />
+            <div className={style.counter}>
+              <button
+                className={style.pointer}
+                onClick={() => editModalCounter(-1)}
+              >
+                -
+              </button>
+              <p>{modalCounter}</p>
+              <button
+                className={style.pointer}
+                onClick={() => editModalCounter(1)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <p className={style.price}>
+            {getModalPrice(modalPrice, modalCounter)} ₽
+          </p>
+        </div>
       </div>
-    </dialog>,
-    document.getElementById("modal")
+    </div>
   );
 }

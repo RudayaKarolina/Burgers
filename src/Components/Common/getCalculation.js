@@ -13,3 +13,8 @@ export function getCommonPrice(arr){
     });
     return count
 }
+
+export function getModalPrice(price, number){
+    let count = price*number
+    return count
+}

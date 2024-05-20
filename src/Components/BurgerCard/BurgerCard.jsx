@@ -10,7 +10,7 @@ export default function BurgerCard({ title, img, price, gramm, onClick }) {
         alt="img"
         className={style.burgerImage}
       />
-      <p className={style.burgerPrice}>{price}</p>
+      <p className={style.burgerPrice}>{price} ₽</p>
       <p className={style.burgerTitle}>{title}</p>
       <p className={style.burgerGramm}>{gramm}</p>
       <Buttons content="Добавить" colorBack="#F2F2F3" colorText="black" />
