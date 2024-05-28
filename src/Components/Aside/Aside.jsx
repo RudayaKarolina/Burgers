@@ -9,50 +9,59 @@ export default function Aside({ basketState }) {
   const { basketArr, setBasketArr } = basketState;
 
   function changeBasketCount(id, symbol) {
-    const newBasketArr = basketArr.map((item) => {
-      if (item.count == 1 && symbol == "-1") return item;
+    const newBasketArr = basketArr.filter((item) => {
       if (item.id === id) {
         item.count = +item.count + symbol;
+        if (item.count <=0) {
+          return false;
+        }
+        return true
       }
-      return item;
+      return true;
     });
     setBasketArr(newBasketArr);
   }
-  
+
   return (
     <div className={style.wrapperAside}>
       <div className={style.basketCounter}>
         <h2>Корзина</h2>
-        <div>{getCommonCount(basketArr)}</div>
+        {basketArr.length !== 0 && <div>{getCommonCount(basketArr)}</div>}
       </div>
       <hr />
-      <div className={style.basketItems}>
-        {basketArr.map((item) => (
-          <BasketItem
-            img={item.img}
-            title={item.title}
-            price={item.price}
-            gramm={item.gramm}
-            count={item.count}
-            key={uuidv4()}
-            id={item.id}
-            changeBasketCount={changeBasketCount}
+      {basketArr.length !== 0 ? (
+        <div className={style.basketFull}>
+          <div className={style.basketItems}>
+            {basketArr.map((item) => (
+              <BasketItem
+                img={item.img}
+                title={item.title}
+                price={item.price}
+                gramm={item.gramm}
+                count={item.count}
+                key={uuidv4()}
+                id={item.id}
+                changeBasketCount={changeBasketCount}
+              />
+            ))}
+          </div>
+          <div className={style.sum}>
+            <p>Итого</p>
+            <p>{getCommonPrice(basketArr)}₽</p>
+          </div>
+          <Buttons
+            content="Оформить заказ"
+            colorBack="#FF7020"
+            colorText="#FFFFFF"
           />
-        ))}
-      </div>
-      <div className={style.sum}>
-        <p>Итого</p>
-        <p>{getCommonPrice(basketArr)}₽</p>
-      </div>
-      <Buttons
-        content="Оформить заказ"
-        colorBack="#FF7020"
-        colorText="#FFFFFF"
-      />
-      <div className={style.delivery}>
-        <img src={deliveryImg} alt="delivery" />
-        <p>Бесплатная доставка</p>
-      </div>
+          <div className={style.delivery}>
+            <img src={deliveryImg} alt="delivery" />
+            <p>Бесплатная доставка</p>
+          </div>
+        </div>
+      ) : (
+        <p className={style.emptyBasket}>Тут пока пусто</p>
+      )}
     </div>
   );
 }

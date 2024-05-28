@@ -1,8 +1,7 @@
 @import '../../style/template.scss';
 .wrapperAside {
-  width: 300px;
+  width: 325px;
   margin: 72px 30px 0 75px;
-  padding: 16px;
   .basketCounter{
     display: flex;
     justify-content: space-between;
@@ -14,25 +13,33 @@
     line-height: 100%;
     margin-bottom: 12px;
   }
-  .sum {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    p {
-      font-family: Nunito;
-      font-size: 16px;
-      line-height: 130%;
+  .basketFull{
+    .sum {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      p {
+        font-family: Nunito;
+        font-size: 16px;
+        line-height: 130%;
+      }
+    }
+    .delivery {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      p {
+        font-family: Nunito;
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
-  .delivery {
-    margin-top: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    p {
-      font-family: Nunito;
-      font-size: 12px;
-      line-height: 16px;
-    }
+  .emptyBasket{
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: italic;
   }
 }
+

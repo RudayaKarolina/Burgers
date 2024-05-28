@@ -6,8 +6,6 @@ import Header from "./Components/Header/Header";
 import ModalWindow from "./Components/ModalWindow/ModalWindow";
 import style from "./style/App.module.scss";
 import { useState } from "react";
-import basket from "./Components/data/basket.json";
-import addBasketItem from "./Components/Common/addBasketItem";
 import addImage from "./Components/Common/addImageFunc";
 
 import burgers from "./Components/data/burgers.json";
@@ -43,15 +41,17 @@ export default function App() {
     setHeading(title);
   }
 
-  const [basketArr, setBasketArr] = useState(addBasketItem(basket));
-  const basketState = { basketArr, setBasketArr };
-  const headingobj = { heading, setHeading, menu, setMenu };
-
+  const [basketArr, setBasketArr] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
   const [modalTitle, setModalTitle] = useState("null");
   const [modalPrice, setModalPrice] = useState("null");
   const [modalInfo, setModalInfo] = useState("null");
+  const [modalGramm, setModalGramm] = useState("null");
+  const [modalId, setModalId] = useState("null");
+
+  const basketState = { basketArr, setBasketArr };
+  const headingobj = { heading, setHeading, menu, setMenu };
   const modalObj = {
     modal,
     setModal,
@@ -62,17 +62,17 @@ export default function App() {
     modalPrice,
     setModalPrice,
     modalInfo,
-    setModalInfo,
+    setModalInfo,modalGramm, setModalGramm,modalId, setModalId
   };
 
   return (
     <>
-      {modal && <ModalWindow modalObj={modalObj} />}
+      {modal && <ModalWindow modalObj={modalObj} basketState={basketState}/>}
       <Header />
       <Nav headingobj={headingobj} editNavLink={editNavLink} />
       <div className={style.wrapperMain}>
         <Aside basketState={basketState} />
-        <Main headingobj={headingobj} modalObj={modalObj} />
+        <Main headingobj={headingobj} modalObj={modalObj} basketState={basketState} />
       </div>
       <Footer />
     </>

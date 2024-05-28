@@ -4,8 +4,18 @@ import closeImg from "../../assets/close.png";
 import { useState } from "react";
 import { getModalPrice } from "../Common/getCalculation";
 
-export default function ModalWindow({ modalObj }) {
-  const { setModal, modalImage, modalTitle, modalPrice, modalInfo } = modalObj;
+export default function ModalWindow({ modalObj, basketState }) {
+  const {
+    setModal,
+    modalImage,
+    modalTitle,
+    modalPrice,
+    modalInfo,
+    modalGramm,
+    modalId,
+  } = modalObj;
+
+  const { basketArr, setBasketArr } = basketState;
 
   function closeModal() {
     setModal(false);
@@ -16,6 +26,25 @@ export default function ModalWindow({ modalObj }) {
   function editModalCounter(symbol) {
     if (modalCounter == 1 && symbol == -1) return;
     setModalCounter(modalCounter + +symbol);
+  }
+  function addingToOrder() {
+    const existsBasketItem = basketArr.find((item) => item.id == modalId);
+    if (existsBasketItem) {
+      existsBasketItem.count += modalCounter;
+      setBasketArr([...basketArr]);
+    } else
+      setBasketArr([
+        ...basketArr,
+        {
+          img: modalImage,
+          title: modalTitle,
+          price: modalPrice,
+          count: modalCounter,
+          gramm: modalGramm,
+          id: modalId,
+        },
+      ]);
+    closeModal();
   }
 
   return (
@@ -39,6 +68,7 @@ export default function ModalWindow({ modalObj }) {
               content="Добавить"
               colorBack="#FF7020"
               colorText="#FFFFFF"
+              onClick={addingToOrder}
             />
             <div className={style.counter}>
               <button

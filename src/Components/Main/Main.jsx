@@ -2,16 +2,26 @@ import BurgerCard from "../BurgerCard/BurgerCard";
 import style from "./Main.module.scss";
 import { v4 as uuidv4 } from "uuid";
 
-export default function Main({ headingobj, modalObj }) {
-  const {setModal,  setModalImage, setModalTitle, setModalPrice, setModalInfo} = modalObj;
+export default function Main({ headingobj, modalObj, basketState }) {
+  const {
+    setModal,
+    setModalImage,
+    setModalTitle,
+    setModalPrice,
+    setModalInfo,
+    setModalGramm,
+    setModalId,
+  } = modalObj;
   const { menu, heading } = headingobj;
 
-  function openModal(img, title, price, info) {
+  function openModal(img, title, price, info, gramm, id) {
     setModal(true);
     setModalImage(img);
     setModalTitle(title);
-    setModalPrice(price)
-    setModalInfo(info)
+    setModalPrice(price);
+    setModalInfo(info);
+    setModalGramm(gramm);
+    setModalId(id);
   }
 
   return (
@@ -24,8 +34,20 @@ export default function Main({ headingobj, modalObj }) {
             title={item.title}
             price={item.price}
             gramm={item.gramm}
+            id={item.id}
             key={uuidv4()}
-            onClick={() => openModal(item.img, item.title, item.price, item.info)}
+            obj={item}
+            basketState={basketState}
+            onClick={() =>
+              openModal(
+                item.img,
+                item.title,
+                item.price,
+                item.info,
+                item.gramm,
+                item.id
+              )
+            }
           />
         ))}
       </div>
