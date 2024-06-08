@@ -5,42 +5,15 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ModalWindow from "./Components/ModalWindow/ModalWindow";
 import style from "./style/App.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import addImage from "./Components/Common/addImageFunc";
-
-import burgers from "./Components/data/burgers.json";
-import hotdogs from "./Components/data/hot-dogs.json";
-import zakuski from "./Components/data/zakuski.json";
-import kombo from "./Components/data/kombo.json";
-import shaurma from "./Components/data/shaurma.json";
-import pizza from "./Components/data/pizza.json";
-import sauce from "./Components/data/sauce.json";
-import dessert from "./Components/data/desserts.json";
-import vok from "./Components/data/wok.json";
-
-const arrMenu = [
-  { title: "burgers", data: burgers },
-  { title: "zakuski", data: zakuski },
-  { title: "hotdogs", data: hotdogs },
-  { title: "kombo", data: kombo },
-  { title: "shaurma", data: shaurma },
-  { title: "pizza", data: pizza },
-  { title: "vok", data: vok },
-  { title: "dessert", data: dessert },
-  { title: "sauce", data: sauce },
-];
+import { getProducts, getBasket } from "./services/get";
 
 export default function App() {
+  const [arrMenu, setArrMenu] = useState(false);
   const [activeNavLink, setActiveNavLink] = useState(0);
-  const [menu, setMenu] = useState(addImage(arrMenu[activeNavLink]));
+  const [menu, setMenu] = useState([]);
   const [heading, setHeading] = useState("Бургеры");
-
-  function editNavLink(index, title) {
-    setActiveNavLink(index);
-    setMenu(addImage(arrMenu[index]));
-    setHeading(title);
-  }
-
   const [basketArr, setBasketArr] = useState([]);
   const [modal, setModal] = useState(false);
   const [modalImage, setModalImage] = useState(null);
@@ -49,7 +22,8 @@ export default function App() {
   const [modalInfo, setModalInfo] = useState("null");
   const [modalGramm, setModalGramm] = useState("null");
   const [modalId, setModalId] = useState("null");
-
+  const [flag, setFlag] = useState(false);
+  const objFlag = { flag, setFlag };
   const basketState = { basketArr, setBasketArr };
   const headingobj = { heading, setHeading, menu, setMenu };
   const modalObj = {
@@ -62,17 +36,67 @@ export default function App() {
     modalPrice,
     setModalPrice,
     modalInfo,
-    setModalInfo,modalGramm, setModalGramm,modalId, setModalId
+    setModalInfo,
+    modalGramm,
+    setModalGramm,
+    modalId,
+    setModalId,
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
+    editBasket();
+  }, [flag]);
+
+  async function editBasket() {
+    const data = await getBasket();
+    setBasketArr(data);
+  }
+
+  async function getData() {
+    const data = await getProducts();
+    setArrMenu([
+      { title: "burgers", data: data.burgers },
+      { title: "zakuski", data: data.zakuski },
+      { title: "hotdogs", data: data.hotdogs },
+      { title: "kombo", data: data.kombo },
+      { title: "shaurma", data: data.shaurma },
+      { title: "pizza", data: data.pizza },
+      { title: "vok", data: data.wok },
+      { title: "dessert", data: data.desserts },
+      { title: "sauce", data: data.sauce },
+    ]);
+    setMenu(addImage({ title: "burgers", data: data.burgers }));
+  }
+
+  function editNavLink(index, title) {
+    setActiveNavLink(index);
+    setMenu(addImage(arrMenu[index]));
+    setHeading(title);
+  }
 
   return (
     <>
-      {modal && <ModalWindow modalObj={modalObj} basketState={basketState}/>}
+      {modal && (
+        <ModalWindow
+          modalObj={modalObj}
+          basketState={basketState}
+          objFlag={objFlag}
+        />
+      )}
       <Header />
       <Nav headingobj={headingobj} editNavLink={editNavLink} />
       <div className={style.wrapperMain}>
         <Aside basketState={basketState} />
-        <Main headingobj={headingobj} modalObj={modalObj} basketState={basketState} />
+        <Main
+          headingobj={headingobj}
+          modalObj={modalObj}
+          basketState={basketState}
+          objFlag={objFlag}
+        />
       </div>
       <Footer />
     </>
