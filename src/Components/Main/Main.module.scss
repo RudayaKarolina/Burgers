@@ -1,22 +1,52 @@
 @import '../../style/template.scss';
 .wrapperMain {
-  margin-bottom: 156px;
-  width: 1140px;
+  margin-bottom: 220px;
+  max-width: 1320px;
+  @media (max-width: 1440px) {
+    width: 1140px;
+    margin-bottom: 156px;
+  }
+  @media (max-width: 768px) {
+    width: 500px;
+    margin-bottom: 100px;
+  }
   .heading {
     font-family: Nunito;
-    font-size: 40px;
+   
     font-weight: 600;
     line-height: 120%;
-    margin-bottom: 24px;
+    font-size: 52px;
+    margin-bottom: 30px;
+
+    @media (max-width: 1440px) {
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
   }
   .burgerCars{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    // @media (max-width: 1550px) {
+    //   gap: 10px;
+    // }
     img{
-      width: 276px;
-      height: 220px;
-      border-radius: 12px
+      width: 100%;
+      border-radius: 12px;
+      height: 290px;
+      // @media (max-width: 1920px) {
+      //   height: 290px;
+      // }
+      // @media (max-width: 1770px) {
+      //   height: 230px
+      // }
+      // @media (max-width: 1550px) {
+      //   height: 225px
+      // }
+      @media (max-width: 1440px) {
+        height: 220px;
+        gap: 10px;
+      }
     }
   }
 }

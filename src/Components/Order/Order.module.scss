@@ -1,0 +1,99 @@
+.wrapperOrderWindow {
+  background-color: rgba(0, 0, 0, 0.253);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  .wrapperOrder {
+    width: 684px;
+    height: 432px;
+    background-color: white;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    
+    .closeImg {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+    }
+    .orderImg {
+      width: 50%;
+      background-color: #ffab08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px 0 0 20px;
+    }
+    .orderInfo {
+      width: 50%;
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      padding: 30px 0 0 20px;
+      background-color: rgba(230, 230, 230, 0.329);
+      border-radius:  0 20px 20px 0 ;
+      position: relative;
+      button{
+        position: absolute;
+        bottom: 25px;
+        width: 276px;
+        height: 40px;
+        cursor: pointer;
+      }
+      h2 {
+        font-family: Nunito;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .name_and_tel{
+        width: 90%;
+        height: 35px;
+        border-radius: 10px;
+        border: none;
+        padding-left: 10px;
+        outline: none;
+        font-family: Nunito;
+      }
+      .about_delivery{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-family: Nunito;
+        input{
+          margin-right: 10px;
+        }
+       
+      }
+      .address{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        input{
+          width: 90%;
+          height: 35px;
+          border-radius: 10px;
+          border: none;
+          padding-left: 10px;
+          outline: none;
+          font-family: Nunito;
+        }
+        .floor{
+          display: flex;
+          width: 90%;
+          gap: 5px;
+        }
+      }
+     
+    }
+  }
+}

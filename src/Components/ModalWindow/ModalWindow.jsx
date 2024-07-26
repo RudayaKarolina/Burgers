@@ -1,10 +1,10 @@
-import Buttons from "../Buttons/Buttons";
-import style from "./ModalWindow.module.scss";
-import closeImg from "../../assets/close.png";
 import { useState } from "react";
+import Buttons from "../Buttons/Buttons";
 import { getModalPrice } from "../Common/getCalculation";
 import putBasket from "../../services/put";
 import postBasket from "../../services/post";
+import style from "./ModalWindow.module.scss";
+import closeImg from "../../assets/close.png";
 
 export default function ModalWindow({ modalObj, basketState, objFlag }) {
   const {

@@ -8,12 +8,11 @@ import img7 from "../../assets/nav/vok.png";
 import img8 from "../../assets/nav/deserts.png";
 import img9 from "../../assets/nav/sauce.png";
 
-const arrImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
-
+const arrImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 export default function addNavImage(data) {
-  return data.map((item, index)=>{
-    item.img = arrImg[index]
-    return item
-  })
+  return data.map((item, index) => {
+    item.img = arrImg[index];
+    return item;
+  });
 }

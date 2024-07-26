@@ -5,14 +5,12 @@ import burger4 from "../../assets/burgers/photo4.png";
 import burger5 from "../../assets/burgers/photo5.png";
 import burger6 from "../../assets/burgers/photo6.png";
 
-
 import kombo1 from "../../assets/kombo/kombo1.jpeg";
 import kombo2 from "../../assets/kombo/kombo2.jpg";
 import kombo3 from "../../assets/kombo/kombo3.jpg";
 import kombo4 from "../../assets/kombo/kombo4.jpg";
 import kombo5 from "../../assets/kombo/kombo5.jpg";
 import kombo6 from "../../assets/kombo/kombo6.jpg";
-
 
 import shaurma1 from "../../assets/Shaurma/shaurma1.jpg";
 import shaurma2 from "../../assets/Shaurma/shaurma2.jpg";
@@ -21,16 +19,12 @@ import shaurma4 from "../../assets/Shaurma/shaurma4.jpg";
 import shaurma5 from "../../assets/Shaurma/shaurma5.jpg";
 import shaurma6 from "../../assets/Shaurma/shaurma6.jpg";
 
-
-
 import pizza1 from "../../assets/pizza/pizza1.jpeg";
 import pizza2 from "../../assets/pizza/pizza2.jpeg";
 import pizza3 from "../../assets/pizza/pizza3.jpg";
 import pizza4 from "../../assets/pizza/pizza4.jpg";
 import pizza5 from "../../assets/pizza/pizza5.jpeg";
 import pizza6 from "../../assets/pizza/pizza7.jpg";
-
-
 
 import dessert1 from "../../assets/desserts/desserts1.jpg";
 import dessert2 from "../../assets/desserts/desserts2.jpg";
@@ -39,29 +33,21 @@ import dessert4 from "../../assets/desserts/desserts4.jpg";
 import dessert5 from "../../assets/desserts/desserts5.jpg";
 import dessert6 from "../../assets/desserts/desserts7.jpg";
 
-
-
 import vok1 from "../../assets/wok/vok1.jpg";
 import vok2 from "../../assets/wok/vok2.jpg";
 import vok3 from "../../assets/wok/vok3.jpg";
-
-
 
 import sauce1 from "../../assets/sauce/sauce1.jpg";
 import sauce2 from "../../assets/sauce/sauce2.jpg";
 import sauce3 from "../../assets/sauce/sauce3.jpg";
 
-
 import hotdog1 from "../../assets/hot-dogs/photo (3).png";
 import hotdog2 from "../../assets/hot-dogs/photo (4).png";
 import hotdog3 from "../../assets/hot-dogs/photo (5).png";
 
-
-
 import zakuski1 from "../../assets/zakuski/photo.png";
 import zakuski2 from "../../assets/zakuski/photo (1).png";
 import zakuski3 from "../../assets/zakuski/photo (2).png";
-
 
 const allImages = {
   burgers: [burger1, burger2, burger3, burger4, burger5, burger6],

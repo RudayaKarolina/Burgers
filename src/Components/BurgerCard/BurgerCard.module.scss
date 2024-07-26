@@ -2,30 +2,78 @@
 .wrapperBurgerCars {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 420px;
   padding: 12px;
+  // @media (max-width: 1920px) {
+  //   max-width: 400px;
+  // }
+  // @media (max-width: 1770px) {
+  //   max-width: 400px;
+  // }
+  // @media (max-width: 1550px) {
+  //   max-width: 30px;
+  // }
+  @media (max-width: 1440px) {
+    width: 300px;
+  }
+  .btnAdd{
+    width: 420px;
+  }
   .burgerImage {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    // @media (max-width: 1920px) {
+    //   margin-bottom: 24px;
+    // }
+    @media (max-width: 1440px) {
+      margin-bottom: 16px;
+    }
   }
   .burgerPrice {
     font-family: Nunito;
-    font-size: 24px;
+  
     font-weight: 600;
     line-height: 100%;
-    margin-bottom: 8px;
+    font-size: 32px;
+    margin-bottom: 12px;
+    // @media (max-width: 1920px) {
+    //   font-size: 32px;
+    //   margin-bottom: 12px;
+    // }
+    @media (max-width: 1440px) {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
   }
   .burgerTitle {
     font-family: Nunito;
-    font-size: 16px;
+   
     line-height: 130%;
-    margin-bottom: 29px;
+    font-size: 20px;
+      margin-bottom: 35px;
+    // @media (max-width: 1920px) {
+    //   font-size: 20px;
+    //   margin-bottom: 35px;
+    // }
+    @media (max-width: 1440px) {
+      font-size: 16px;
+      margin-bottom: 29px;
+    }
   }
   .burgerGramm {
     color: rgb(177, 177, 177);
     font-family: Nunito;
-    font-size: 16px;
+  
     font-weight: 600;
     line-height: 130%;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 12px;
+    // @media (max-width: 1920px) {
+    //   font-size: 20px;
+    //   margin-bottom: 12px;
+    // }
+    @media (max-width: 1440px) {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
   }
 }

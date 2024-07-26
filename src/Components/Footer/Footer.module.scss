@@ -1,22 +1,49 @@
 @import "../../style/template.scss";
 .wrapperFooter {
-  padding-left: 75px;
+  padding-left: 100px;
+  @media (max-width: 1440px) {
+    padding-left: 75px;
+  }
   .logoAndInfo {
     display: flex;
-    gap: 360px;
+    gap: 460px;
+    @media (max-width: 1920px) {
+      gap: 460px;
+    }
+    @media (max-width: 1440px) {
+      gap: 360px;
+    }
     .logo {
-      width: 304.32px;
-      height: 66.59px;
+      width: 330px;
+        height: 80px;
       margin-bottom: 55px;
+      @media (max-width: 1920px) {
+        width: 330px;
+        height: 80px;
+      }
+      @media (max-width: 1440px) {
+        width: 304.32px;
+      height: 66.59px;
+      }
     }
     .info {
       display: flex;
-      gap: 126px;
+      gap: 160px;
+      @media (max-width: 1920px) {
+        gap: 160px;
+      }
+      @media (max-width: 1440px) {
+        gap: 126px;
+      }
       .infoTitle {
         margin-bottom: 26px;
         font-family: Nunito;
-        font-size: 24px;
+        font-size: 28px;
         line-height: 100%;
+    
+        @media (max-width: 1440px) {
+          font-size: 24px;
+        }
       }
       .internet {
         img {
@@ -28,19 +55,29 @@
         gap: 1.5px;
         .telNumber {
           font-family: Nunito;
-          font-size: 16px;
+          font-size: 18px;
           line-height: 130%;
+          @media (max-width: 1440px) {
+            font-size: 16px;
+          }
         }
       }
     }
   }
   .authors {
     font-family: Nunito;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 16px;
     margin-bottom: 40px;
+    @media (max-width: 1920px) {
+      font-size: 16px;
+    }
+    @media (max-width: 1440px) {
+      font-size: 12px;
+    }
     p {
       margin-bottom: 4px;
+
     }
   }
 }

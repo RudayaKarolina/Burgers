@@ -1,6 +1,6 @@
 import BurgerCard from "../BurgerCard/BurgerCard";
-import style from "./Main.module.scss";
 import { v4 as uuidv4 } from "uuid";
+import style from "./Main.module.scss";
 
 export default function Main({ headingobj, modalObj, basketState, objFlag }) {
   const {
@@ -14,7 +14,7 @@ export default function Main({ headingobj, modalObj, basketState, objFlag }) {
   } = modalObj;
   const { menu, heading } = headingobj;
 
-  function openModal({img, title, price, info, gramm, id}) {
+  function openModal({ img, title, price, info, gramm, id }) {
     setModal(true);
     setModalImage(img);
     setModalTitle(title);
@@ -30,7 +30,7 @@ export default function Main({ headingobj, modalObj, basketState, objFlag }) {
       <div className={style.burgerCars}>
         {menu.map((item) => (
           <BurgerCard
-          objFlag={objFlag}
+            objFlag={objFlag}
             img={item.img}
             title={item.title}
             price={item.price}
@@ -39,11 +39,7 @@ export default function Main({ headingobj, modalObj, basketState, objFlag }) {
             key={uuidv4()}
             obj={item}
             basketState={basketState}
-            onClick={() =>
-              openModal(
-                {...item}
-              )
-            }
+            onClick={() => openModal({ ...item })}
           />
         ))}
       </div>

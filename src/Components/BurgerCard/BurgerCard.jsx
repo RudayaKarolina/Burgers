@@ -1,7 +1,7 @@
 import Buttons from "../Buttons/Buttons";
-import style from "./BurgerCard.module.scss";
 import postBasket from "../../services/post";
 import putBasket from "../../services/put";
+import style from "./BurgerCard.module.scss";
 
 export default function BurgerCard({
   title,
@@ -33,7 +33,7 @@ export default function BurgerCard({
       <p className={style.burgerPrice}>{price} ₽</p>
       <p className={style.burgerTitle}>{title}</p>
       <p className={style.burgerGramm}>{gramm}</p>
-      <Buttons
+      <Buttons className={style.btnAdd}
         content="Добавить"
         colorBack="#F2F2F3"
         colorText="black"

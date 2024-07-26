@@ -1,8 +1,8 @@
+import style from "./Footer.module.scss";
 import logo from "../../assets/logoOrange.png";
 import call from "../../assets/Call.png";
 import vk from "../../assets/vk.png";
 import telegram from "../../assets/telegram.png";
-import style from "./Footer.module.scss";
 
 export default function Footer() {
   return (

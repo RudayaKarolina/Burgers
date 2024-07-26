@@ -1,8 +1,8 @@
 import Heading from "../Heading/Heading";
 import Buttons from "../Buttons/Buttons";
+import style from "./Header.module.scss";
 import logo from "../../assets/logo.png";
 import burger from "../../assets/burgerPic.png";
-import style from "./Header.module.scss";
 
 export default function Header() {
   return (

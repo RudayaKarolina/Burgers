@@ -5,4 +5,8 @@
   font-size: 50px;
   font-weight: 800;
   line-height: 120%;
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
 }
