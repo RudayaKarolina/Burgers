@@ -33,7 +33,8 @@ export default function BurgerCard({
       <p className={style.burgerPrice}>{price} ₽</p>
       <p className={style.burgerTitle}>{title}</p>
       <p className={style.burgerGramm}>{gramm}</p>
-      <Buttons className={style.btnAdd}
+      <Buttons
+        className={style.btnAdd}
         content="Добавить"
         colorBack="#F2F2F3"
         colorText="black"

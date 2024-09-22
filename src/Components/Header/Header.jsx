@@ -1,5 +1,4 @@
 import Heading from "../Heading/Heading";
-import Buttons from "../Buttons/Buttons";
 import style from "./Header.module.scss";
 import logo from "../../assets/logo.png";
 import burger from "../../assets/burgerPic.png";
@@ -17,7 +16,6 @@ export default function Header() {
           <Heading content="сочные бургеры" color="rgb(255, 92, 0)" />
           <Heading content="!" color="rgb(255, 92, 0)" />
           <p className={style.deliveryText}>Бесплатная доставка от 599 Р</p>
-          <Buttons content="Добавить" colorBack="white" colorText="black" />
         </div>
       </div>
     </div>

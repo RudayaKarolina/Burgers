@@ -12,12 +12,12 @@ export default function Order({ samovyvozObj, orderObj, confirmWindowObj }) {
     setOrder(false);
     setSamovyvoz(false);
   }
-
   function btnOrderClick() {
     setOrder(false);
     setConfirmWindow(true);
     setSamovyvoz(false);
   }
+
   return (
     <div className={style.wrapperOrderWindow}>
       <div className={style.wrapperOrder}>

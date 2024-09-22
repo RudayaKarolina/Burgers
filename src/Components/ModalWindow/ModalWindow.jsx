@@ -60,16 +60,17 @@ export default function ModalWindow({ modalObj, basketState, objFlag }) {
           <div>
             <p className={style.description}>{modalInfo}</p>
             <p className={style.sostav}>Состав:</p>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p className={style.sostav}>Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
-        <div className={style.addToOrder}>
+        <div className={style.addToOrderAll}>
           <div className={style.addToOrder}>
             <Buttons
               content="Добавить"
               colorBack="#FF7020"
               colorText="#FFFFFF"
               onClick={addingToOrder}
+              className={style.btn_modal}
             />
             <div className={style.counter}>
               <button

@@ -52,7 +52,7 @@ export default function Aside({ basketState, orderObj }) {
           </div>
           <div className={style.sum}>
             <p>Итого</p>
-            <p>{getCommonPrice(basketArr)}₽</p>
+            <p>{getCommonPrice(basketArr)} ₽</p>
           </div>
           <Buttons
             content="Оформить заказ"

@@ -1,79 +1,167 @@
-@import '../../style/template.scss';
+@import "../../style/vars.scss";
+
 .wrapperAside {
-  width: 485px;
-  margin:72px 50px 0 65px;
-  @media (max-width: 1440px) {
-    width: 340px;
+  font-family: $font-family;
+  flex-grow: 1;
+  margin: 72px 50px 0 65px;
+  @media (max-width: 1900px) {
+    margin: 70px 30px 0 65px;
+  }
+  @media (max-width: 1850px) {
+    margin: 70px 50px 0 50px;
+  }
+  @media (max-width: 1560px) {
     margin: 72px 37px 0 75px;
   }
-  @media (max-width: 768px) {
-    width: 185px;
-    margin: 45px 20px 0 20px;
+  @media (max-width: 1440px) {
+    flex-grow: 0;
+    width: 340px;
   }
-  .basketCounter{
+  @media (max-width: 1380px) {
+    margin: 72px 37px 0 40px;
+  }
+  @media (max-width: 1230px) {
+    margin: 72px 20px 0 30px;
+  }
+  @media (max-width: 890px) {
+    margin: 67px 14px 0 25px;
+  }
+  @media (max-width: 768px) {
+    width: 175px;
+    margin: 45px 18px 0 18px;
+  }
+  @media (max-width: 550px) {
+    width: 175px;
+    margin: 45px 14px 0 14px;
+  }
+  @media (max-width: 480px) {
+    margin: 45px 9px 0 12px;
+  }
+  @media (max-width: 400px) {
+    margin: 45px 10px 0 10px;
+  }
+  @media (max-width: 390px) {
+    width: 87px;
+    margin: 23px 8px 0 8px;
+  }
+  .basketCounter {
     display: flex;
     justify-content: space-between;
   }
-  p{
-    font-size: 24px;
-
+  p {
+    font-size: 28px;
+    @media (max-width: 1800px) {
+      font-size: 24px;
+    }
+    @media (max-width: 1560px) {
+      font-size: 20px;
+    }
     @media (max-width: 1440px) {
       font-size: 18px;
+    }
+    @media (max-width: 1060px) {
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      font-size: 12px;
+    }
+    @media (max-width: 800px) {
+      font-size: 11px;
     }
     @media (max-width: 768px) {
       font-size: 10px;
     }
+    @media (max-width: 600px) {
+      font-size: 8px;
+    }
+    @media (max-width: 390px) {
+      font-size: 5px;
+    }
   }
   h2 {
-    font-family: Nunito;
     font-weight: 600;
     line-height: 100%;
     font-size: 36px;
     margin-bottom: 16px;
-
-    @media (max-width: 1440px) {
+    @media (max-width: 1560px) {
       font-size: 24px;
       margin-bottom: 12px;
+    }
+    @media (max-width: 860px) {
+      font-size: 18px;
     }
     @media (max-width: 768px) {
       font-size: 12px;
       margin-bottom: 8px;
     }
+    @media (max-width: 390px) {
+      font-size: 6px;
+      margin-bottom: 4px;
+    }
   }
-  .basketFull{
-    .basketItems{
-      max-height: 420px;
+  .basketFull {
+    .basketItems {
+      max-height: 440px;
       padding-right: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       overflow: auto;
-
+      @media (max-width: 1880px) {
+        max-height: 462px;
+      }
+      @media (max-width: 1790px) {
+        max-height: 430px;
+      }
+      @media (max-width: 1700px) {
+        max-height: 390px;
+      }
+      @media (max-width: 1560px) {
+        max-height: 380px;
+      }
+      @media (max-width: 1450px) {
+        max-height: 377px;
+      }
       @media (max-width: 1440px) {
-        max-height: 260px;
+        max-height: 310px;
       }
       @media (max-width: 768px) {
         max-height: 195px;
         margin-bottom: 10px;
+        padding-right: 1px;
+      }
+      @media (max-width: 390px) {
+        max-height: 100px;
+        margin-bottom: 5px;
       }
     }
     .sum {
       display: flex;
       justify-content: space-between;
       margin-bottom: 24px;
-      padding: 0 10px;
+      padding: 0 5px;
       @media (max-width: 768px) {
-        padding: 0 10px 0 0;
         margin-bottom: 10px;
       }
+      @media (max-width: 375px) {
+        margin-bottom: 5px;
+      }
       p {
-        font-family: Nunito;
         line-height: 130%;
         font-size: 26px;
+        @media (max-width: 1700px) {
+          font-size: 20px;
+        }
         @media (max-width: 1440px) {
           font-size: 16px;
         }
         @media (max-width: 768px) {
           font-size: 10px;
           margin-bottom: 1px;
+        }
+        @media (max-width: 490px) {
+          font-size: 7px;
+        }
+        @media (max-width: 390px) {
+          font-size: 5px;
         }
       }
     }
@@ -89,27 +177,68 @@
         gap: 5px;
         margin-top: 10px;
       }
+      @media (max-width: 390px) {
+        gap: 2px;
+        margin-top: 5px;
+      }
       p {
-        font-family: Nunito;
         line-height: 16px;
         font-size: 22px;
-
         @media (max-width: 1440px) {
+          font-size: 18px;
+        }
+        @media (max-width: 1200px) {
+          font-size: 16px;
+        }
+        @media (max-width: 1000px) {
+          font-size: 14px;
+        }
+        @media (max-width: 800px) {
           font-size: 12px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
+          font-size: 9px;
+        }
+        @media (max-width: 600px) {
           font-size: 8px;
+        }
+        @media (max-width: 500px) {
+          font-size: 6px;
+        }
+        @media (max-width: 390px) {
+          font-size: 4px;
+        }
+      }
+      img {
+        @media (max-width: 900px) {
+          width: 15px;
+        }
+        @media (max-width: 600px) {
+          width: 12px;
+        }
+        @media (max-width: 390px) {
+          width: 10px;
         }
       }
     }
   }
-  .emptyBasket{
-    font-family: Nunito;
+  .emptyBasket {
     font-style: italic;
     font-size: 28px;
     @media (max-width: 1440px) {
       font-size: 20px;
     }
+    @media (max-width: 800px) {
+      font-size: 16px;
+    }
+    @media (max-width: 700px) {
+      font-size: 12px;
+    }
+    @media (max-width: 470px) {
+      font-size: 10px;
+    }
+    @media (max-width: 390px) {
+      font-size: 8px;
+    }
   }
 }
-

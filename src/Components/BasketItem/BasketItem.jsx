@@ -1,6 +1,14 @@
 import style from "./BasketItem.module.scss";
 
-export default function BasketItem({ img, title, gramm, price, count, id, changeBasketCount }) {
+export default function BasketItem({
+  img,
+  title,
+  gramm,
+  price,
+  count,
+  id,
+  changeBasketCount,
+}) {
   return (
     <>
       <div className={style.wrapperBasketItem}>
@@ -13,11 +21,17 @@ export default function BasketItem({ img, title, gramm, price, count, id, change
           </div>
         </div>
         <div className={style.counter}>
-          <button className={style.pointer} onClick={()=>changeBasketCount(id, -1)}>
+          <button
+            className={style.pointer}
+            onClick={() => changeBasketCount(id, -1)}
+          >
             -
-          </button> 
+          </button>
           <p>{count}</p>
-          <button className={style.pointer} onClick={()=>changeBasketCount(id, +1)}>
+          <button
+            className={style.pointer}
+            onClick={() => changeBasketCount(id, +1)}
+          >
             +
           </button>
         </div>
